@@ -39,5 +39,8 @@ setup(
     extras_require={
         'discord': ['discord.py'],
         'systemd': ['systemd']
-    }
+    },
+    scripts=[
+        'bin/apex'
+    ]
 )
