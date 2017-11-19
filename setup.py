@@ -1,5 +1,6 @@
 from setuptools import setup
 from setuptools import find_packages
+from distutils.cmd import Command
 import re as regex
 
 
@@ -10,6 +11,10 @@ def long_description():
 def get_version():
     with open('apex/__init__.py') as file:
         return regex.search(r'^__version__\s*=\s*"(.*)"$', file.read(), regex.MULTILINE).group(1)
+
+def get_requirements():
+    with open('requirements.txt') as file:
+        return file.readlines()
 
 setup(
     name='apex-framework',
@@ -34,13 +39,14 @@ setup(
     ],
     keywords='bot discord framework',
     packages=find_packages(exclude=['tests*']),
-    install_requires=[],
+    install_requires=get_requirements(),
     python_requires='>=3.6',
+    setup_requires=['pytest-runner'],
+    tests_require=['pytest'],
     extras_require={
         'discord': ['discord.py'],
-        'systemd': ['systemd']
+        'systemd': ['systemd'],
+        'mongodb': ['pymongo']
     },
-    scripts=[
-        'bin/apex'
-    ]
+    scripts=['bin/apex']
 )
