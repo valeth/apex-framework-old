@@ -1,0 +1,6 @@
+#!/usr/bin/env python3
+
+# TODO: add generators for modules, etc.
+
+if __name__ == "__main__":
+    exit(0)
