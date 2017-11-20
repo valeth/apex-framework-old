@@ -1,5 +1,7 @@
 # Coverage reporting
-/*cov*
+.coverage
+coverage.xml
+/htmlcov/
 
 # Setuptools
 /build/ 
