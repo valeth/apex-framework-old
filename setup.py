@@ -1,6 +1,5 @@
 from setuptools import setup
 from setuptools import find_packages
-from distutils.cmd import Command
 import re as regex
 
 
@@ -8,13 +7,17 @@ def long_description():
     with open('README.md') as file:
         return file.read()
 
+
 def get_version():
     with open('apex/__init__.py') as file:
-        return regex.search(r'^__version__\s*=\s*"(.*)"$', file.read(), regex.MULTILINE).group(1)
+        ver_regex = r'^__version__\s*=\s*"(.*)"$'
+        return regex.search(ver_regex, file.read(), regex.MULTILINE).group(1)
+
 
 def get_requirements():
     with open('requirements.txt') as file:
         return file.readlines()
+
 
 setup(
     name='apex-framework',
