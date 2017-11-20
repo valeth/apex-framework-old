@@ -1,5 +1,10 @@
+# Coverage reporting
+/*cov*
+
+# Setuptools
 /build/ 
 /dist/
 *.egg*
 
+# Python
 *.pyc

@@ -1,0 +1,22 @@
+languages:
+  - "python"
+
+exclude_paths:
+  - "tests/**"
+
+engines:
+  pylint:
+    enabled: true
+    python_version: 3
+  
+  prospector:
+    enabled: true
+
+  duplication:
+    enabled: true
+  
+  metrics:
+    enabled: true
+
+  coverage:
+    enabled: true
