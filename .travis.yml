@@ -2,6 +2,8 @@ language: python
 python:
   - "3.6"
 
+cache: pip
+
 env:
   - CODACY_PROJECT_TOKEN=877044b500ac460581689f427f67c449
 
