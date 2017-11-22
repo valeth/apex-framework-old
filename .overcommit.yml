@@ -1,0 +1,11 @@
+PreCommit:
+  Pylint:
+    enabled: true
+    required: true
+    include: apex/**/*.py
+    command: ['pylint', '--output-format=text', 'apex']
+
+CommitMsg:
+  HardTabs:
+    enabled: true
+    required: true
